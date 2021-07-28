@@ -1,4 +1,6 @@
 import sys
+from pprint import pprint
+
 import numpy as np
 
 if __name__ == '__main__':
@@ -6,8 +8,9 @@ if __name__ == '__main__':
 
     np.set_printoptions(suppress=True)
 
-    deci_value = np.array([[1.0151, -3.1124], [-0.0215, 12.235], [-1.1412, 42.133]])
+    deci_value = np.array([[1.0151, -3.1124], [-5.1585, 12.235], [-1.1412, 42.133]])
     rounded_value = np.round(deci_value, 2)
-
-    print("Array Size {} \nArray Shape {} \nAfter Round Off {} \nBefore Round Off {}\n"
-          .format(deci_value.size, deci_value.shape, rounded_value, deci_value))
+    arounded_value = np.around(deci_value, 2)
+    print("Array Size {} \nArray Shape {} \nBefore Round Off:- \n{} \nAfter Round Off (Using round):- \n{} "
+          "\nAfter Round Off (Using around):- \n{}"
+          .format(deci_value.size, deci_value.shape, deci_value, rounded_value, arounded_value))
